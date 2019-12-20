@@ -16,6 +16,12 @@ fond = pygame.image.load("image/1.jpg")
 
 clock = pygame.time.Clock()
 
+music = pygame.mixer.music.load("sound/music background.mp3")
+pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0.2)
+
+provocation = pygame.mixer.Sound("sound/omae-wa-mou-shindeiru.wav")
+pas = pygame.mixer.Sound("sound/pas.wav")
 
 class player(object):
     def __init__(self, x, y, width, height):
@@ -102,11 +108,18 @@ while run:
         perso1.g = True
         perso1.d = False
         perso1.debout = False
+        pas.play()
+        pas.set_volume(0.03)
     elif keys[pygame.K_d] and perso1.x < 1600 - perso1.width - perso1.vel:
         perso1.x += perso1.vel
         perso1.d = True
         perso1.g = False
         perso1.debout = False
+        pas.play()
+        pas.set_volume(0.03)
+    elif keys[pygame.K_l]:
+        provocation.play()
+        provocation.set_volume(0.15)
     else:
         perso1.debout = True
         perso1.mouv = 0
