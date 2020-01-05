@@ -18,8 +18,8 @@ M_marchedroite = [pygame.image.load('image/D1.png'), pygame.image.load('image/D2
                   pygame.image.load('image/D6.png'), pygame.image.load('image/D7.png'),
                   pygame.image.load('image/D8.png')]
 
-L_deboutgauche = pygame.image.load('image/mandicG.png')
-L_deboutdroite = pygame.image.load("image/mandicD.png")
+L_deboutgauche = pygame.image.load('image/lopatoG.png')
+L_deboutdroite = pygame.image.load("image/lopatoD.png")
 L_marchegauche = [pygame.image.load('image/2G1.png'), pygame.image.load('image/2G2.png'),
                   pygame.image.load('image/2G3.png'),
                   pygame.image.load('image/2G4.png'), pygame.image.load('image/2G5.png'),
