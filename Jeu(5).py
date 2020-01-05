@@ -2,7 +2,7 @@ import pygame
 
 pygame.init()
 
-taillefen = pygame.display.set_mode((1280, 720), pygame.RESIZABLE)  # ne pas toucher!!! taille de la fenetre
+taillefen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # ne pas toucher!!! taille de la fenetre
 pygame.display.set_caption("Jeu")
 
 M_deboutgauche = pygame.image.load('image/mandicG.png')
@@ -40,9 +40,10 @@ score2 = 0
 
 music = pygame.mixer.music.load("sound/music background.mp3")
 pygame.mixer.music.play(-1)
-pygame.mixer.music.set_volume(0.2)
+pygame.mixer.music.set_volume(0.15)
 
-provocation = pygame.mixer.Sound("sound/omae-wa-mou-shindeiru.wav")
+provoc_mandic = pygame.mixer.Sound("sound/omae-wa-mou-shindeiru.wav")
+provoc_lopato = pygame.mixer.Sound("sound/lopato.wav")
 pas = pygame.mixer.Sound("sound/pas.wav")
 
 
@@ -252,8 +253,8 @@ while run:
         pas.play()
         pas.set_volume(0.03)
     elif keys[pygame.K_l]:
-        provocation.play()
-        provocation.set_volume(0.15)
+        provoc_mandic.play()
+        provoc_mandic.set_volume(0.10)
     else:
         perso1.debout = True
         perso1.mouv = 0
@@ -299,8 +300,8 @@ while run:
         pas.play()
         pas.set_volume(0.03)
     elif keys[pygame.K_KP1]:
-        provocation.play()
-        provocation.set_volume(0.15)
+        provoc_lopato.play()
+        provoc_lopato.set_volume(0.50)
     else:
         perso2.debout = True
         perso2.mouv = 0
