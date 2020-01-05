@@ -80,14 +80,16 @@ class player(object):
                 else:
                     taillefen.blit(M_deboutdroite, (self.x, self.y))
             pygame.draw.rect(taillefen, (255, 0, 0), (30, 90, 100, 30))
-            pygame.draw.rect(taillefen, (0, 255, 0), (30, 90, 100, 30))
+            pygame.draw.rect(taillefen, (0, 255, 0), (30, 90, 100 - ((50/10) * (10 - self.health)), 30))
             self.hitbox = (self.x + 12, self.y + 9, 180, 230)
             # pygame.draw.rect(taillefen, (255, 0, 0), self.hitbox, 1)
 
     def hit(self):
         if self.health > 0:
             self.health -= 1
-        print('hit')
+        else:
+            self.visible = False
+
 
 
 class enemy(object):
@@ -124,12 +126,15 @@ class enemy(object):
                 else:
                     taillefen.blit(L_deboutgauche, (self.x, self.y))
             pygame.draw.rect(taillefen, (255, 0, 0), (1000, 90, 100, 30))
-            pygame.draw.rect(taillefen, (0, 255, 0), (1000, 90, 100, 30))
+            pygame.draw.rect(taillefen, (0, 255, 0), (1000, 90, 100 - ((50/10) * (10 - self.health)), 30))
             self.hitbox = (self.x + 12, self.y + 9, 180, 230)
             # pygame.draw.rect(taillefen, (255, 0, 0), self.hitbox, 1)
 
     def hit(self):
-        print('hit')
+        if self.health > 0:
+            self.health -= 1
+        else:
+            self.visible = False
 
 
 class projectile(object):
